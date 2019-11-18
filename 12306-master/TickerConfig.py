@@ -8,8 +8,8 @@ TICKET_TYPE = 2
 
 # 出发日期(list) "2018-01-06", "2018-01-07"
 STATION_DATES = [
-    "2019-12-12"
-    #"2020-01-14"
+    # "2019-12-12"
+    "2020-01-14"
 ]
 
 # 填入需要购买的车次(list)，"G1353"
@@ -33,7 +33,7 @@ TO_STATION = "成都"
 # "硬座",
 # "无座",
 # "动卧",
-SET_TYPE = ["硬座" , "硬卧"]
+SET_TYPE = ["硬座", "硬卧", "无座", "软卧", "软座"]
 
 # 当余票小于乘车人，如果选择优先提交，则删减联系人和余票数一致在提交
 # bool
@@ -42,7 +42,7 @@ IS_MORE_TICKET = True
 # 乘车人(list) 多个乘车人ex:
 # "张三",
 # "李四"
-TICKET_PEOPLES = ["邓小琴","刘洪"]
+TICKET_PEOPLES = ["邓小琴", "刘洪"]
 
 # 12306登录账号
 USER = "lxplxp123123"
@@ -80,18 +80,18 @@ HTTP_TYPE = "http"
 #  password: "授权码"
 #  host: "smtp.qq.com"
 EMAIL_CONF = {
-    "IS_MAIL": False,
-    "email": "",
-    "notice_email_list": "",
-    "username": "",
-    "password": "",
+    "IS_MAIL": True,
+    "email": "602357524@qq.com",
+    "notice_email_list": "602357524@qq.com,675928132@qq.com",
+    "username": "602357524@qq.com",
+    "password": "xxwunqfabyanbfad",
     "host": "smtp.qq.com",
 }
 
 # 是否开启 server酱 微信提醒， 使用前需要前往 http://sc.ftqq.com/3.version 扫码绑定获取 SECRET 并关注获得抢票结果通知的公众号
 SERVER_CHAN_CONF = {
-    "is_server_chan": False,
-    "secret": ""
+    "is_server_chan": True,
+    "secret": "SCU66677Td5154e36c6855777d82bf395f30372d25dd1fcaa30391"
 }
 
 # 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭
@@ -102,7 +102,7 @@ ORDER_TYPE = 2
 
 # 下单模式 1 为预售，整点刷新，刷新间隔0.1-0.5S, 然后会校验时间，比如12点的预售，那脚本就会在12.00整检票，刷新订单
 #         2 是捡漏，捡漏的刷新间隔时间为0.5-3秒，时间间隔长，不容易封ip
-ORDER_MODEL = 2
+ORDER_MODEL = 1
 
 # 是否开启代理, 0代表关闭， 1表示开始
 # 开启此功能的时候请确保代理ip是否可用，在测试放里面经过充分的测试，再开启此功能，不然可能会耽误你购票的宝贵时间
@@ -127,14 +127,13 @@ CHROME_PATH = "E:/chromedriver.exe"
 RAIL_EXPIRATION = ""
 RAIL_DEVICEID = ""
 
-
 # 1=>为一直随机ua,2->只启动的时候随机一次ua
 RANDOM_AGENT = 2
 
 PASSENGER_TICKER_STR = {
     '一等座': 'M',
-    '特等座': 'P',
     '二等座': 'O',
+    '特等座': 'P',
     '商务座': 9,
     '硬座': 1,
     '无座': 1,
